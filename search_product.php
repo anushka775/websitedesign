@@ -4,6 +4,7 @@ include("includes/connect.php");
 include("functions/common_function.php");
 session_start();
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,21 +16,11 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous">"
-
-      
-
     <!--font awesome link-->
     <script src="https://kit.fontawesome.com/e0279fdced.js" crossorigin="anonymous"></script>
 
 
     <link rel="stylesheet"href="style.css">
-
-    <style>
-      body{
-    overflow-x: hidden;
-}
-        </style>
-
 
 
 </head>
@@ -58,24 +49,19 @@ session_start();
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="./users_area/user_registration.php">Register</a>
+          <a class="nav-link" href="#">Register</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#"> Contact</a>
+          <a class="nav-link" href=""><i class="fa-solid fa-cart-shopping"></i>"<sup>1</sup></a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
-          </i><sup>  <?php cart_item(); ?> /- </sup></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#"> Total Price: <?php  total_cart_price(); ?> </a>
+          <a class="nav-link" href="#">Total Price: <?php  total_cart_price(); ?></a>
         </li>
         
 </ul> 
-      <form class="d-flex" action="search_product.php" method="get">
+      <form class="d-flex" action="" method="get">
         <input class="form-control me-2" type="search" 
         placeholder="Search" aria-label="Search" name="search_data">
 
@@ -88,29 +74,14 @@ session_start();
   </div>
 </nav>
 
-
-<!----calling cart function--->
-<?php
-cart();
-?>
-
 <!-----second child---->
 <nav class="navbar navbar-expand-lg navbar-toggler bg-info.bg-gradient">
     <ul class="navbar-nav me-auto"></ul>
+<li class="nav-item">
+     <a class="nav-link" href="#"> Welcome Guest</a>
+</li>
 
-    <?php
-    if(!isset($_SESSION['username'])) {
-echo"<li class='nav-item'>
-     <a class='nav-link' href='#'> Welcome Guest</a>
-</li>";
- 
-    }else{
-echo"<li class='nav-item'>
-<a class='nav-link' href='#'>Welcome" .$_SESSION['username']."</a>
-</div>";
-    }
-
-    
+<?php
 if(!isset($_SESSION['username'])) {
  echo" <li class='nav-item'>
     <a class='nav-link' href='./users_area/user_login.php'>Login</a>
@@ -144,16 +115,16 @@ if(!isset($_SESSION['username'])) {
         <?php
 
         //calling function
-       getproducts();
+       search_product();
        get_unique_categories();
        get_unique_brands();
-       //$ip = getIPAddress();  
-      // echo 'User Real IP Address - '.$ip;  
+        
         
         ?>
 
         
         
+
 
            <!--- <div class="col-md-3 mb-2">
             <div class="card">
@@ -239,10 +210,6 @@ getcategories() ;
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
 crossorigin="anonymous"></script>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>

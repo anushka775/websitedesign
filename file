@@ -1,0 +1,5 @@
+$select_category="SELECT * from `category` wherebrand_id=$category_id";
+    $result_category=mysqli_query($con, $select_category);
+    $row_category=mysqli_fetch_assoc($result_category);
+    $category_title=$row_category['$category_title'];
+    echo $category_title;

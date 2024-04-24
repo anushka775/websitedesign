@@ -1,5 +1,8 @@
 *{
-    margin: 0;
+    margin: 0%;
+    padding:0;
+    box-sizing: border-box;
+    overflow-x:hidden ;
 }
 .logo{
     width: 3%;
@@ -16,8 +19,17 @@
     height: 200px;
     width: 250px   
 }
-.admin_image{
+/*.admin_image{
     height: 75px;
    width:100px
 
+}*/
+
+.cart_img{
+    width: 50px;
+    height: 50px;
 }
+
+
+
+
